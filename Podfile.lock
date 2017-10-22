@@ -1,0 +1,15 @@
+PODS:
+  - BEMCheckBox (1.4.1)
+  - RAMAnimatedTabBarController (2.0.13)
+
+DEPENDENCIES:
+  - BEMCheckBox
+  - RAMAnimatedTabBarController (~> 2.0.13)
+
+SPEC CHECKSUMS:
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
+  RAMAnimatedTabBarController: 2510f3b66954c3f77ea1042a35d34df8f5f3b604
+
+PODFILE CHECKSUM: 038115a0e33eed4c3cb5c3e47bde207022c52701
+
+COCOAPODS: 1.2.1

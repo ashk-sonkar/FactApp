@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RAMAnimatedTabBarController
 
-class AnimateTabBarController: UITabBarController {
+class AnimateTabBarController: RAMAnimatedTabBarController{
 
+    @IBOutlet weak var barOutlet: UITabBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

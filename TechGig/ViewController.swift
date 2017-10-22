@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var currentFact: UIView!
@@ -20,9 +19,6 @@ class ViewController: UIViewController {
     let reachability = Reachability()!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-   
-        
         self.view.backgroundColor = UIColor.blue
         reachability.whenReachable = { _ in
             print("Reachable")
@@ -35,11 +31,11 @@ class ViewController: UIViewController {
                 self.view.backgroundColor = UIColor.red
             }
         }
-            NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: Notification.Name.reachabilityChanged, object: reachability)
-            do{
-                try reachability.startNotifier()
-            }catch{
-                print("Could not start Notifier")
+        NotificationCenter.default.addObserver(self, selector: #selector(internetChanged), name: Notification.Name.reachabilityChanged, object: reachability)
+        do{
+            try reachability.startNotifier()
+        }catch{
+            print("Could not start Notifier")
         }
         
         
@@ -49,7 +45,7 @@ class ViewController: UIViewController {
         let  reachability =  note.object as! Reachability
         if reachability.connection != .none{
             DispatchQueue.main.async {
-                self.view.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+                self.view.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
                 self.displayCurrentFact()
                 self.currentFact.isHidden = false
                 self.factLabel.isHidden = false
@@ -59,18 +55,18 @@ class ViewController: UIViewController {
                 
             }
         }
-            else{
-                DispatchQueue.main.async {
-                    self.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                    self.backgroundImage.image = nil
-                    self.factLabel.text = "NO INTERNET CONNECTION"
-                    self.factLabel.isHidden = true
-                    self.factImage.image = #imageLiteral(resourceName: "error2")
-                    self.currentFact.layer.shadowColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-                    self.currentFact.layer.shadowOffset = CGSize(width: 0, height: 0)
-                    
-                    
-                }
+        else{
+            DispatchQueue.main.async {
+                self.view.backgroundColor = #colorLiteral(red: 0, green: 0.5898008943, blue: 1, alpha: 1)
+                self.backgroundImage.image = nil
+                self.factLabel.text = "NO INTERNET CONNECTION"
+                self.factLabel.isHidden = true
+                self.factImage.image = #imageLiteral(resourceName: "error2")
+                self.currentFact.layer.shadowColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                self.currentFact.layer.shadowOffset = CGSize(width: 0, height: 0)
+                
+                
+            }
         }
     }
 

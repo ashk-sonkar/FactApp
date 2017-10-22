@@ -19,10 +19,7 @@ class randomViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        styleButtons(toStyle: trivia)
-        styleButtons(toStyle: maths)
-        styleButtons(toStyle: date)
-        styleButtons(toStyle: year)
+        
         
         // Do any additional setup after loading the view.
         
