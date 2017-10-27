@@ -7,21 +7,50 @@
 //
 
 import UIKit
+import BEMCheckBox
 
 class randomViewController: UIViewController {
 
-    @IBOutlet weak var trivia: UIButton!
-    @IBOutlet weak var maths: UIButton!
-    @IBOutlet weak var date: UIButton!
-    @IBOutlet weak var year: UIButton!
+    var categories  = ""
+    var search = ""
+    var fact = ""
     
+    var group : BEMCheckBoxGroup!
+    var group2 : BEMCheckBoxGroup!
+    @IBOutlet weak var containerView: UIView!
+    
+    @IBOutlet weak var trivia: BEMCheckBox!
+    @IBOutlet weak var maths: BEMCheckBox!
+    @IBOutlet weak var date: BEMCheckBox!
+    @IBOutlet weak var year: BEMCheckBox!
+    
+    @IBOutlet weak var random: BEMCheckBox!
+    @IBOutlet weak var selected: BEMCheckBox!
+    
+    @IBOutlet weak var enterSearch: UITextField!
+    
+    @IBOutlet weak var factLabel: UILabel!
+    @IBOutlet weak var factContainer: UIView!
+    @IBOutlet weak var cancelButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.group =  BEMCheckBoxGroup(checkBoxes: [trivia, maths, date, year])
+        self.group2 = BEMCheckBoxGroup(checkBoxes: [random, selected])
+        self.group.mustHaveSelection = true
+        group2.mustHaveSelection = true
         
+        group.selectedCheckBox = trivia
+        group2.selectedCheckBox = random
         
-        // Do any additional setup after loading the view.
+        factContainer.isHidden = true
+        cancelButton.isHidden = true
+        
+        style(toStyle: containerView)
+        style(toStyle: factContainer)
+        if(random.isEnabled == true){
+            enterSearch.isHidden = true
+        }
         
     }
 
@@ -30,18 +59,7 @@ class randomViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func TriviaButton(_ sender: Any) {
-        getFact(about: "trivia")
-    }
-    @IBAction func MathsButton(_ sender: UIButton) {
-        getFact(about: "math")
-    }
-    @IBAction func DateButton(_ sender: UIButton) {
-        getFact(about: "date")
-    }
-    @IBAction func YearButton(_ sender: UIButton) {
-        getFact(about: "year")
-    }
+
     
     func getFact(about str: String){
         var fact = "fetching..."
@@ -60,7 +78,7 @@ class randomViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    func styleButtons(toStyle: UIButton){
+    func style(toStyle: UIView){
         toStyle.layer.cornerRadius = 10
         toStyle.layer.masksToBounds = false
         toStyle.layer.shadowColor = UIColor.black.cgColor
@@ -69,4 +87,72 @@ class randomViewController: UIViewController {
         toStyle.layer.shadowOpacity = 1
     }
     
+    @IBAction func randomOpted(_ sender: BEMCheckBox) {
+        if(random.isEnabled == true){
+            enterSearch.isHidden = true
+        }
+    }
+    @IBAction func selectedOpted(_ sender: Any) {
+        if(selected.isEnabled == true){
+            enterSearch.isHidden = false
+        }
+        
+    }
+    
+    func getCategory(){
+        if(group.selectedCheckBox == trivia){
+            categories = "trivia"
+        }else if( group.selectedCheckBox == maths){
+            categories = "math"
+        }else if(group.selectedCheckBox == date){
+            categories = "date"
+        }else if(group.selectedCheckBox == year){
+            categories = "year"
+        }
+    }
+    @IBAction func getFactButton(_ sender: UIButton) {
+        getCategory()
+        print(categories)
+        
+        getfact()
+        
+        containerView.isHidden = true
+        factContainer.isHidden = false
+        cancelButton.isHidden = false
+        
+    }
+    func getfact(){
+        
+        if(group2.selectedCheckBox == selected){
+            let url = URL(string: "http://numbersapi.com/\( enterSearch.text!)/\(categories)")
+            do{
+                
+                fact = try NSString(contentsOf:  url!, encoding: 2) as String
+                print(fact)
+                
+            }catch{
+                fact = "Error"
+            }
+        }
+        else{
+            let url = URL(string: "http://numbersapi.com/random/\(categories)")
+            do{
+                
+                fact = try NSString(contentsOf:  url!, encoding: 2) as String
+                print(fact)
+                
+            }catch{
+                fact = "Error"
+            }
+        }
+        factLabel.text = fact
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        
+        factContainer.isHidden = true
+        cancelButton.isHidden = true
+        containerView.isHidden = false
+        
+    }
 }

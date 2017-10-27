@@ -66,7 +66,7 @@
                                                             <constraint firstAttribute="width" constant="343" id="D4B-sg-eDK"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6o-AH-Ani">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6o-AH-Ani">
                                                         <rect key="frame" x="8" y="8" width="243" height="267"/>
                                                         <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="25"/>
                                                         <nil key="textColor"/>
@@ -125,13 +125,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OSg-YB-la1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today's Fact" image="icon1.1" id="lQe-aU-9Dj" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Today's Fact" image="icon1.2" id="lQe-aU-9Dj" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
@@ -176,7 +176,7 @@
             </objects>
             <point key="canvasLocation" x="824" y="2226"/>
         </scene>
-        <!--Random-->
+        <!--Search Fact-->
         <scene sceneID="kHT-Uf-DEX">
             <objects>
                 <viewController id="ZKg-L7-h1a" customClass="randomViewController" customModule="TechGig" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,7 +197,7 @@
                                                 </constraints>
                                                 <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <items>
-                                                    <navigationItem title="Title" id="BQT-09-t2o"/>
+                                                    <navigationItem title="Search Fact" id="BQT-09-t2o"/>
                                                 </items>
                                             </navigationBar>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDz-aY-RhG">
@@ -250,6 +250,9 @@
                                                                 <real key="value" value="0.5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="randomOpted:" destination="ZKg-L7-h1a" eventType="valueChanged" id="HjQ-SP-H5G"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4g-xm-Xad" customClass="BEMCheckBox">
                                                         <rect key="frame" x="107" y="46" width="15" height="15"/>
@@ -352,7 +355,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDP-sE-gCI">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number or MM/DD or YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GDP-sE-gCI">
                                                         <rect key="frame" x="18" y="184" width="323" height="30"/>
                                                         <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.26789918664383561" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -385,6 +388,9 @@
                                                                 <real key="value" value="0.5"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="selectedOpted:" destination="ZKg-L7-h1a" eventType="valueChanged" id="RhR-0h-gPv"/>
+                                                        </connections>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itT-PM-V9q">
                                                         <rect key="frame" x="137" y="233" width="84" height="30"/>
@@ -396,6 +402,9 @@
                                                         <state key="normal" title="Get Fact">
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="getFactButton:" destination="ZKg-L7-h1a" eventType="touchUpInside" id="qtN-xV-PAH"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -442,11 +451,57 @@
                                                     <constraint firstItem="RKt-Q7-fAN" firstAttribute="top" secondItem="9Pi-eW-Hwl" secondAttribute="bottom" constant="-150" id="vN1-jv-pfd"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6B-cK-RIi">
+                                                <rect key="frame" x="8" y="162" width="359" height="400"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cartoon1" translatesAutoresizingMaskIntoConstraints="NO" id="96G-uB-jda">
+                                                        <rect key="frame" x="8" y="8" width="343" height="384"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="343" id="Bc3-gq-nuU"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGn-W0-syq">
+                                                        <rect key="frame" x="8" y="8" width="243" height="267"/>
+                                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0k-7D-gMg">
+                                                        <rect key="frame" x="334" y="375" width="25" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="dGl-kO-1yS"/>
+                                                            <constraint firstAttribute="width" constant="25" id="iyF-O4-c83"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="cancel"/>
+                                                        <connections>
+                                                            <action selector="cancelButtonPressed:" destination="ZKg-L7-h1a" eventType="touchUpInside" id="DvW-BQ-i79"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="SGn-W0-syq" firstAttribute="top" secondItem="r6B-cK-RIi" secondAttribute="top" constant="8" id="3Uk-Y5-wZb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SGn-W0-syq" secondAttribute="trailing" constant="108" id="Att-LH-CYB"/>
+                                                    <constraint firstItem="96G-uB-jda" firstAttribute="top" secondItem="r6B-cK-RIi" secondAttribute="top" constant="8" id="GQ6-dR-UIv"/>
+                                                    <constraint firstAttribute="bottom" secondItem="a0k-7D-gMg" secondAttribute="bottom" id="JRe-Z8-6cD"/>
+                                                    <constraint firstItem="96G-uB-jda" firstAttribute="leading" secondItem="r6B-cK-RIi" secondAttribute="leading" constant="8" id="Mkx-fs-k8q"/>
+                                                    <constraint firstAttribute="bottom" secondItem="96G-uB-jda" secondAttribute="bottom" constant="8" id="Nn4-I9-UxZ"/>
+                                                    <constraint firstAttribute="width" constant="359" id="S9q-Sx-XY2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a0k-7D-gMg" secondAttribute="trailing" id="b9d-6T-VIg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="96G-uB-jda" secondAttribute="trailing" constant="8" id="gFM-V8-VQu"/>
+                                                    <constraint firstItem="SGn-W0-syq" firstAttribute="leading" secondItem="r6B-cK-RIi" secondAttribute="leading" constant="8" id="hjb-sZ-2r8"/>
+                                                    <constraint firstAttribute="height" constant="400" id="ns6-i9-S5d"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SGn-W0-syq" secondAttribute="bottom" constant="125" id="zAD-Mw-TNQ"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="TGa-nN-Aug" firstAttribute="top" secondItem="ikP-eU-lhg" secondAttribute="top" id="3qs-AB-Wwk"/>
                                             <constraint firstAttribute="bottom" secondItem="HUb-a2-wo1" secondAttribute="bottom" constant="207" id="4hr-re-gYZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="r6B-cK-RIi" secondAttribute="bottom" constant="105" id="Bxi-Nv-gyT"/>
+                                            <constraint firstItem="r6B-cK-RIi" firstAttribute="top" secondItem="PDz-aY-RhG" secondAttribute="bottom" constant="38" id="ELq-UZ-NkN"/>
+                                            <constraint firstItem="r6B-cK-RIi" firstAttribute="centerX" secondItem="ikP-eU-lhg" secondAttribute="centerX" id="G6y-Gr-Q33"/>
                                             <constraint firstAttribute="height" constant="667" id="UGp-ke-Yzi"/>
                                             <constraint firstItem="dRS-j2-f9j" firstAttribute="leading" secondItem="ikP-eU-lhg" secondAttribute="leading" id="crM-vR-B3z"/>
                                             <constraint firstItem="dRS-j2-f9j" firstAttribute="top" secondItem="TGa-nN-Aug" secondAttribute="bottom" constant="80" id="dTd-v6-UYI"/>
@@ -490,19 +545,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xVm-3Z-q7b"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Random" image="icon1.1" id="l4A-SU-EGY" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Search Fact" image="search3" id="l4A-SU-EGY" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outlet property="animation" destination="6IA-n4-pJx" id="kay-Eb-XdI"/>
                         </connections>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="a0k-7D-gMg" id="xf0-p6-nbA"/>
+                        <outlet property="containerView" destination="HUb-a2-wo1" id="Lnu-BQ-ez6"/>
+                        <outlet property="date" destination="H58-Ub-IWh" id="qC5-0n-cCE"/>
+                        <outlet property="enterSearch" destination="GDP-sE-gCI" id="LHo-WR-FHq"/>
+                        <outlet property="factContainer" destination="r6B-cK-RIi" id="dfA-aE-QKL"/>
+                        <outlet property="factLabel" destination="SGn-W0-syq" id="k8t-hi-sUc"/>
+                        <outlet property="maths" destination="h4g-xm-Xad" id="L15-Nb-qdf"/>
+                        <outlet property="random" destination="YEM-pu-ShW" id="ea7-Wt-fDy"/>
+                        <outlet property="selected" destination="6iZ-O7-tRv" id="nfu-cb-Azs"/>
+                        <outlet property="trivia" destination="IJo-2K-Djq" id="p82-1D-6E1"/>
+                        <outlet property="year" destination="ng8-DM-n5h" id="c0q-Mu-W9g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEq-VP-voh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="6IA-n4-pJx" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
@@ -532,51 +600,51 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="L2z-V7-LUk">
-                                <rect key="frame" x="50" y="164" width="275" height="354"/>
+                                <rect key="frame" x="50" y="164" width="275" height="403"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfb-O7-8Go">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="33"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Trivia"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number For Trivia Fact" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ui-aj-l3R">
-                                        <rect key="frame" x="0.0" y="47" width="275" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="53" width="275" height="33"/>
                                         <color key="backgroundColor" red="1" green="0.70163929460745877" blue="0.10493803727615825" alpha="0.18501177226027396" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI6-gC-en4">
-                                        <rect key="frame" x="0.0" y="93.5" width="275" height="27"/>
+                                        <rect key="frame" x="0.0" y="106" width="275" height="32.5"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Maths"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number For Mathematical Fact" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DRI-4N-cuE">
-                                        <rect key="frame" x="0.0" y="140.5" width="275" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="158.5" width="275" height="33"/>
                                         <color key="backgroundColor" red="1" green="0.68690906104647909" blue="0.10691642519409483" alpha="0.18501177226027396" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUv-ml-Blj">
-                                        <rect key="frame" x="0.0" y="187" width="275" height="27"/>
+                                        <rect key="frame" x="0.0" y="211.5" width="275" height="33"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Date"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/DD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bDT-EF-1XF">
-                                        <rect key="frame" x="0.0" y="234" width="275" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="264.5" width="275" height="33"/>
                                         <color key="backgroundColor" red="1" green="0.68581489146108432" blue="0.10347072266569957" alpha="0.18501177226027396" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLs-ys-tbp">
-                                        <rect key="frame" x="0.0" y="280.5" width="275" height="27"/>
+                                        <rect key="frame" x="0.0" y="317.5" width="275" height="32.5"/>
                                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Year"/>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="YYYY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWb-tC-nIL">
-                                        <rect key="frame" x="0.0" y="327.5" width="275" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="370" width="275" height="33"/>
                                         <color key="backgroundColor" red="0.94838594543147203" green="0.64398597694245063" blue="0.090053817945596831" alpha="0.18501177226027396" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -694,7 +762,6 @@
                         <outlet property="barOutlet" destination="h3C-MD-Hjm" id="l8V-TK-EpK"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="C6s-M4-cqG"/>
                         <segue destination="ZKg-L7-h1a" kind="relationship" relationship="viewControllers" id="94P-UF-TdH"/>
-                        <segue destination="dp6-Jn-hs4" kind="relationship" relationship="viewControllers" id="feu-Q2-mWI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8q-dK-kYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -705,7 +772,10 @@
     <resources>
         <image name="CardBG2" width="626" height="626"/>
         <image name="bg3" width="626" height="622"/>
+        <image name="cancel" width="62" height="60"/>
         <image name="cartoon1" width="626" height="626"/>
         <image name="icon1.1" width="35" height="35"/>
+        <image name="icon1.2" width="30" height="30"/>
+        <image name="search3" width="30" height="30"/>
     </resources>
 </document>

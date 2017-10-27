@@ -21,6 +21,7 @@
 		CF473A131F8B434C00A2E8A0 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF473A121F8B434C00A2E8A0 /* DisplayViewController.swift */; };
 		CF4B43521F8AAD2B00CA65D3 /* randomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B43511F8AAD2B00CA65D3 /* randomViewController.swift */; };
 		CFB243EC1F9A5C65003C1D94 /* AnimateTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB243EB1F9A5C65003C1D94 /* AnimateTabBarController.swift */; };
+		CFBDB81A1FA2721E00035FB2 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBDB8191FA2721E00035FB2 /* LaunchViewController.swift */; };
 		EFF74C21AED0947CD7190C57 /* Pods_TechGig.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E868AA9C1513388D8F6E01FD /* Pods_TechGig.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		CF473A121F8B434C00A2E8A0 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		CF4B43511F8AAD2B00CA65D3 /* randomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = randomViewController.swift; sourceTree = "<group>"; };
 		CFB243EB1F9A5C65003C1D94 /* AnimateTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateTabBarController.swift; sourceTree = "<group>"; };
+		CFBDB8191FA2721E00035FB2 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		E868AA9C1513388D8F6E01FD /* Pods_TechGig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechGig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				CF11A62E1F8757F8007C111B /* Info.plist */,
 				CF11A6261F8757F8007C111B /* TechGig.xcdatamodeld */,
 				CFB243EB1F9A5C65003C1D94 /* AnimateTabBarController.swift */,
+				CFBDB8191FA2721E00035FB2 /* LaunchViewController.swift */,
 			);
 			path = TechGig;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				CF4B43521F8AAD2B00CA65D3 /* randomViewController.swift in Sources */,
 				CF11A6201F8757F8007C111B /* AppDelegate.swift in Sources */,
 				CF11A6281F8757F8007C111B /* TechGig.xcdatamodeld in Sources */,
+				CFBDB81A1FA2721E00035FB2 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
